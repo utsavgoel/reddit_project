@@ -11,6 +11,9 @@ To reproduce:
 2. Unzip the classifier model in  classifier_website/res directory.
 3. Run Django server, 'python manage.py runserver' (Default opens at port 8000, 127.0.0.1:8000)
 
+Known Issues:
+Accuracy can be improved.
+
 
 
 
