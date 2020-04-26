@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+  <title>Flair Detector</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="card">
+		<div class="card-header">
+		Flair Detector
+		</div>
+ 
+		<div class="card-body">
+			<h5 class="card-title">Enter r/india URL:</h5>
+			<form method="POST" class="post-form">{% csrf_token %}
+				<input type="text" id="url" name="url" ><br><br>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			<br>
+			{% if data %}
+				<div class="alert alert-success" role="alert">
+				<h4 class="alert-heading">Result:</h4>
+				<p>URL: {{data.url}}</p>
+				<hr>
+				<p class="mb-0">Predicted Flare: <strong>{{data.flare}}</p>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header">
+		Data Analysis
+		</div>
+		<div class="card-body">
+		<table class="table">
+			<tr>
+			<td>
+				<div class="card" style="width: 45rem";>
+				<img src="/static/fig1.PNG" class="img-fluid" alt="Responsive image" >
+				<div class="card-body">
+					<h5 class="card-title">Flair Activity Based on number of Comments</h5>
+					<p class="card-text">Inferred: Based on Comments, <br>1. Coronavirus was the most discussed topic among the redditors till date.<br>2. Followed by Politics and Scheduled Posts</p>
+				</div>
+				</div>
+			</td>
+			<td>
+				<div class="card" style="width: 43rem";>
+				<img src="/static/fig2.PNG" class="img-fluid" alt="Responsive image" >
+				<div class="card-body">
+					<h5 class="card-title">Reddit Activity Every Month</h5>
+					<p class="card-text">Inferred: Two outliers: <br> 1. Mar '20: Hike in Coronavirus cases in India. <br> 2. Feb '19: Balakot Air Strike</p>
+				</div>
+				</div>
+			</td>
+			</tr>
+			<tr>
+		</table>
+		<div style="text-align:center";>
+			<img src="/static/fig3.PNG" class="img-fluid" alt="Responsive image" height="50%" width="50%" >
+			<div class="card-body">
+				<h5 class="card-title">All-Time Most Discussed Flairs</h5>
+				<p class="card-text">Pie-Chart depicting the distribution of Flairs from the collected data and their percentage.<br> Inferred: Top 3 Flairs: <br> 1. AskIndia <br> 2. Non-Political <br> 3. Politics<p>
+			</div>
+		</div>
+			
+		</div>
+	</div>
+</body>
+</html>
