@@ -8,7 +8,7 @@ Project is live at: https://afternoon-falls-83076.herokuapp.com/<br><br>
 
 To reproduce:
 1. Clone the repository and install the requirements, 'pip install requirements.txt'.
-2. Run classifier/website/res/data_collector.ipynb to generate the CSV, scraped_reddit.csv. (Could not be uploaded becaus eof size limmitations).
+2. Unzip the classifier model in  classifier_website/res directory.
 3. Run Django server, 'python manage.py runserver' (Default opens at port 8000, 127.0.0.1:8000)
 
 
